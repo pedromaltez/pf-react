@@ -6,7 +6,7 @@ In the project directory, run:
 
 #### `npm start`
 
-This will open up our test application in your browser. (Be warned - the application is broker and you will be tasked with fixing it)
+This will open up our test application in your browser. (Be warned - the application is broken and you will be tasked with fixing it)
 
 This README contains a series of tasks, which involve fixing bugs and adding features
 to this demo application.
@@ -26,14 +26,14 @@ be able to checkout their shopping cart, and see the total cost of their order.
 
 `/products` - Shows a user a list of available products
 
-`/checkout` - Shows the user their shopping cart and total order value and let's a user place the order
+`/checkout` - Shows the user their shopping cart and total order value and allows a user place the order
 
 ## Tasks
 
 ### Task 1 - Fix the routing
 The routes described above are not working, and you will be presented with an error if you have just ran `npm run start`
 
-Please use your debugging skills to workout why you can't navigate to routes such as `/products`' and resolve this issue.
+Please use your debugging skills to workout why you can't navigate to routes such as `/products` and resolve this issue.
 
 ### Task 2 - React State Management
 On the `/products` route you should be able to browse a list of products, and on each one 'Add to cart' can be clicked.
