@@ -1,71 +1,79 @@
 # Provide Interview Tests
 
-Please clone or fork this repository so you can make changes locally and then change into the project directory.
+Please clone or fork this repository, make changes locally, and then navigate into the project directory.
 
 In the project directory, run:
 
 #### `npm start`
 
-This will open up our test application in your browser. (Be warned - the application is broken and you will be tasked with fixing it)
+This action will open up our test application in your web browser. (Be warned - the application is in a broken state, and your task will be to fix it.)
 
-This README contains a series of tasks, which involve fixing bugs and adding features
-to this demo application.
+This README contains a series of tasks which involve fixing bugs and adding features to this demo application.
+Please complete these tasks in their given order, and commit the solutions to each task as individual commits. You are advised to refer to the task number in your commit message.
 
-Please complete these tasks in order, and commit the solutions to each task in their own commit.
-Please refer to the task number in your commit message.
-
-Once completed please share your cloned repository with us.
+Once completed, please share your cloned repository with us.
 
 Best of luck!
 
-## Overview of the application
-This is a very simple React application, created with create-react-app, which offers a basic E-Commerce interface.
+## Overview of the Application
 
-The application allows a user to browse products and add them to a cart. Once the products are in the cart a user should
-be able to checkout their shopping cart, and see the total cost of their order.
+This application is a basic E-Commerce interface created with create-react-app. 
 
-`/products` - Shows a user a list of available products
+The application enables a user to browse products and add them to a basket.
 
-`/checkout` - Shows the user their shopping cart and total order value and allows a user place the order
+Once the products have been added to the basket, the user can checkout their shopping basket and view the total cost of their order.
+
+- `/products` - Shows a list of available products to a user.
+- `/checkout` - Displays the user's shopping basket items, the total order value, and allows the user to place the order.
 
 ## Tasks
 
-### Task 1 - Fix the routing
-The routes described above are not working, and you will be presented with an error if you have just ran `npm run start`
+### Task 1 - Fix the Routing
 
-Please use your debugging skills to workout why you can't navigate to routes such as `/products` and resolve this issue.
+The routes described above are currently not functional. If you run `npm start`, an error will be presented due to the inability to navigate routes such as `/products`. Your task is to debug and rectify this issue.
 
 ### Task 2 - React State Management
-On the `/products` route you should be able to browse a list of products, and on each one 'Add to cart' can be clicked.
-You should see the current shopping cart at the top of the page and the total price.
 
-The shopping cart has a button to check out the order. If you click this, you will be taken to the `/checkout` page. But there is an issue! Once the application has switched to this
-page, the shopping cart is now empty, and the user has nothing to order. The items in the shopping cart currently only display on the `/products` page, and they need to persist across
-all pages (including `/checkout`) so the user doesn't lost the items in their cart when they swith pages.
+On the `/products` route, a list of products should be displayed.
 
-Use your knowledge of React state management to resolve this issue. Please consider the different options such as Context API, Redux, etc. We would like to hear your reasoning behind the
-chosen solution.
+Each product should have an 'Add to basket' option that can be clicked to add the product to the shopping basket.
+The current shopping basket items and their total price should be visible at the top of the page.
 
-Please also add a confirmation message to the user when they have successfully placed their order. (The order doesn't need to be saved, it's just a dummy confirmation)
+A checkout button should be available to proceed to the `/checkout` page.
+
+However, there exists an issue — once the application navigates to the `/checkout` page, the shopping basket gets emptied and the user is left with nothing to order.
+
+These items need to persist across all pages (including `/checkout`) to ensure that the user does not lose the items in their basket when the pages change.
+
+Use your knowledge of React state management to resolve this issue. Consider options such as the Context API, Redux, etc.
+
+We would like you to provide your reasoning behind your chosen solution.
+
+Additionally, please implement a confirmation message to notify users when their order gets successfully placed.
+(Note: The order doesn't need to be saved; this is merely a dummy confirmation.)
 
 ### Task 3 - Making Improvements
-You may have noticed that if you click 'Add to cart' multiple times on a product, the listing for th product is duplicated in the shopping cart.
 
-Please fix this issue so that the quantity of the product is increased, rather than adding a new listing for the product each time it is added to the cart.
+You may have noticed that when you click 'Add to basket' multiple times for a product, its entries get duplicated in the shopping basket.
+
+Rectify this issue by increasing the quantity of the product rather than adding a new entry whenever it is added to the basket multiple times.
 
 ### Task 4 - Component Creation
-You should now have a working E-Commerce system! Users can browse products, and use the now working shopping cart to confirm their order.
 
-However, the products themselves don't show much detail. We would like you to add a new route `product/{id}` which will display detail about the product. Users should be able to click a 'View Detail' button on each of the products on the `/products` page.
+By now, you should have a working E-Commerce system! Users can browse products and confirm their orders using the now functional shopping basket.
 
-Take a look at the API being used to list the products, this will give you an idea of what information you will be able to display on the product detail page.
+However, the product's details are not comprehensive.
+
+We would like you to add a new route `product/{id}` to display detailed information about the product.
+
+Users should be able to click a 'View Detail' button on each product listed on the `/products` page.
+
+For more information, have a look at the API being used to list the products; this will give you an idea of the information available for display on the product detail page.
 
 ### Task 5 - Feature Implementation
 
-Each product that is returned from the API has a 'discount' property. This is not currently being used in the application.
+Each product returned from the API has a 'discount' property, which is currently not being utilised in the application.
 
-Please add a new feature to the `Cart` component, which calculates a new 'Total price' using the products discount value.
-This new total should be displayed next to the original total, and should be the total price after the discount has been applied.
+Serve this purpose by adding a new feature to the `Basket` component that calculates a new 'Total price' using the product's discount value.
 
-
-
+This updated total should be shown next to the original total and reflect the total price after applying discounts.
