@@ -1,14 +1,14 @@
 # Provide Interview Tests
 
-Please clone or fork this repository, make changes locally, and then navigate into the project directory.
+Please clone or fork this repository, complete the tasks in your cloned repository and then once completed share it with us.
 
-In the project directory, run:
+In your cloned repository, from the project directory, run:
 
 #### `npm start`
 
 This action will open up our test application in your web browser. (Be warned - the application is in a broken state, and your task will be to fix it.)
 
-This README contains a series of tasks which involve fixing bugs and adding features to this demo application.
+This README contains a series of tasks which involve fixing bugs and adding features to this application.
 Please complete these tasks in their given order, and commit the solutions to each task as individual commits. You are advised to refer to the task number in your commit message.
 
 Once completed, please share your cloned repository with us.
@@ -47,16 +47,16 @@ These items need to persist across all pages (including `/checkout`) to ensure t
 
 Use your knowledge of React state management to resolve this issue. Consider options such as the Context API, Redux, etc.
 
-We would like you to provide your reasoning behind your chosen solution.
+We would like you to be abe to discuss your reasoning behind your chosen solution.
 
 Additionally, please implement a confirmation message to notify users when their order gets successfully placed.
 (Note: The order doesn't need to be saved; this is merely a dummy confirmation.)
 
 ### Task 3 - Making Improvements
 
-You may have noticed that when you click 'Add to basket' multiple times for a product, its entries get duplicated in the shopping basket.
+You may have noticed that when you click 'Add to basket' multiple times for a product, its entries get duplicated in the shopping cart.
 
-Rectify this issue by increasing the quantity of the product rather than adding a new entry whenever it is added to the basket multiple times.
+Please resolve this issue by increasing the quantity of the product rather than adding a new entry whenever it is added to the basket multiple times.
 
 ### Task 4 - Component Creation
 
@@ -74,6 +74,6 @@ For more information, have a look at the API being used to list the products; th
 
 Each product returned from the API has a 'discount' property, which is currently not being utilised in the application.
 
-Serve this purpose by adding a new feature to the `Basket` component that calculates a new 'Total price' using the product's discount value.
+Please add a new feature to the `Cart` component, which calculates a new 'Total price' using the products discount value.
 
 This updated total should be shown next to the original total and reflect the total price after applying discounts.
