@@ -4,6 +4,10 @@
 
 Please clone or fork this repository, complete the tasks in your cloned repository and then once completed share it with us.
 
+If you have trouble cloning the repository, please ensure you are not using SSH.
+
+You should be able to clone the repository using: `git clone https://bitbucket.org/providefinanceltd/react.git`
+
 In your cloned repository, from the project directory, run:
 
 #### `npm start`
