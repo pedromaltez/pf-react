@@ -10,8 +10,9 @@ If you have trouble cloning the repository, please ensure you are not using SSH.
 
 You should be able to clone the repository using: `git clone https://bitbucket.org/providefinanceltd/react.git`
 
-If you prefer to use GitHub, you can use this link which provides an exact copy of this repository: `https://github.com/DennisBold/provide-react`
+If you prefer to use GitHub, you can use this link which provides an exact copy of this repository: [GitHub Repository](https://github.com/DennisBold/provide-react)
 
+You should push the code to your own repository, either on GitHub or any other Git-based service. You will not have permission to push, branch or make changes to this repository. This was done so that your code remains private from other candidates.
 
 ### Starting the App
 
