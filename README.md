@@ -6,11 +6,14 @@ Please clone or fork this repository, complete the tasks in your cloned reposito
 
 If you have trouble cloning the repository, please ensure you are not using SSH.
 
-#### Cloning this Repo
+### Cloning this Repo
 
 You should be able to clone the repository using: `git clone https://bitbucket.org/providefinanceltd/react.git`
 
 If you prefer to use GitHub, you can use this link which provides an exact copy of this repository: `https://github.com/DennisBold/provide-react`
+
+
+### Starting the App
 
 In your cloned repository, from the project directory, run:
 
