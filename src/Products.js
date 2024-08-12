@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import Divider from '@mui/material/Divider';
 import Cart, { CartContext } from './Cart';
+import { Link } from 'react-router-dom';
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -44,6 +45,7 @@ function ProductList() {
                   </CardContent>
                   <CardActions>
                     <Button size="small" onClick={() => addToCart(product)}>Add to Cart</Button>
+                    <Button size="small" component={Link} to={`/product/${product.id}`}>View Detail</Button>
                   </CardActions>
                 </Card>
               </Grid>
