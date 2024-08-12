@@ -43,9 +43,20 @@ function Cart({ text = 'Browse the items in your cart and then click Checkout', 
 export function useCartState() {
   const [cart, setCart] = useState([]);
 
-  function addToCart(product) {
-    const newProduct = { ...product, quantity: 1 };
-    setCart([...cart, newProduct]);
+  function addToCart(newProduct) {
+    const productInBasket = cart.find(({id}) => id === newProduct.id);
+    if (productInBasket) {
+      const newCart = cart.map(product => {
+        if (product.id === newProduct.id) {
+          return {...product, quantity: product.quantity + 1};
+        } else {
+          return product;
+        }
+      })
+      setCart([...newCart]);
+    } else {
+      setCart([...cart, {...newProduct, quantity: 1}]);
+    }
   }
 
   function clearCart() {
