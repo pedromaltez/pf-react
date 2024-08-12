@@ -6,9 +6,15 @@ import {
   ListItem,
   ListItemText,
 } from '@mui/material';
+import { toast } from 'sonner';
 
 function Cart({ text = 'Browse the items in your cart and then click Checkout', mode = 'browse' }) {
-  const { cart } = useContext(CartContext);
+  const { cart, clearCart } = useContext(CartContext);
+
+  const handleCheckout = () => {
+    toast.success('Your order has been placed.');
+    clearCart();
+  }
 
   return (
     <div>
@@ -28,7 +34,7 @@ function Cart({ text = 'Browse the items in your cart and then click Checkout', 
       {mode === 'browse' ? (
         <Button style={{ marginBottom: 10 }} component={Link} to={'/checkout'} variant={'contained'}>Checkout</Button>
       ) : (
-        <Button style={{ marginBottom: 10 }} component={Link} to={'/checkout'} variant={'contained'}>Confirm Order</Button>
+        <Button disabled={!cart.length} style={{ marginBottom: 10 }} onClick={handleCheckout} variant={'contained'}>Confirm Order</Button>
       )}
     </div>
   )
@@ -42,9 +48,14 @@ export function useCartState() {
     setCart([...cart, newProduct]);
   }
 
+  function clearCart() {
+    setCart([]);
+  }
+
   return {
     cart,
     addToCart,
+    clearCart,
   };
 }
 

@@ -4,6 +4,7 @@ import Layout from './Layout';
 import Products from './Products';
 import Checkout from './Checkout';
 import { CartContext, useCartState } from './Cart';
+import { Toaster } from 'sonner';
 
 function App() {
   const cart = useCartState()
@@ -19,6 +20,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      <Toaster />
     </CartContext.Provider>
   );
 }
