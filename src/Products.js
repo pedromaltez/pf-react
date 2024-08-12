@@ -44,7 +44,7 @@ function ProductList() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" onClick={() => addToCart(product)}>Add to Cart</Button>
+                    <Button size="small" disabled={!product.stock} onClick={() => addToCart(product)}>Add to Cart</Button>
                     <Button size="small" component={Link} to={`/product/${product.id}`}>View Detail</Button>
                   </CardActions>
                 </Card>
