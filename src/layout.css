@@ -1,6 +1,4 @@
-
-.layout ul > li {
-        display: inline-block;
-        margin-right: 20px;
+.layout ul>li {
+  display: inline-block;
+  margin-right: 20px;
 }
-
