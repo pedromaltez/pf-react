@@ -49,6 +49,8 @@ export function useCartState() {
     if (productInBasket) {
       const newCart = cart.map(product => {
         if (product.id === newProduct.id) {
+          const newQuantity = product.quantity + 1;
+          toast.success(`Updated quantity of ${product.title} to ${newQuantity}.`)
           return { ...product, quantity: product.quantity + 1 };
         } else {
           return product;
@@ -56,6 +58,7 @@ export function useCartState() {
       })
       setCart([...newCart]);
     } else {
+      toast.success(`Added ${newProduct.title} to cart.`)
       setCart([...cart, { ...newProduct, quantity: 1 }]);
     }
   }
