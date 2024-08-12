@@ -9,7 +9,7 @@ import {
 import { toast } from 'sonner';
 
 function Cart({ text = 'Browse the items in your cart and then click Checkout', mode = 'browse' }) {
-  const { cart, clearCart } = useContext(CartContext);
+  const { cart, clearCart, total } = useContext(CartContext);
 
   const handleCheckout = () => {
     toast.success('Your order has been placed.');
@@ -30,7 +30,7 @@ function Cart({ text = 'Browse the items in your cart and then click Checkout', 
             )
         }
       </List>
-      <div>Total Price: {cart.reduce((n, { price }) => n + price, 0)}</div>
+      <div>Total Price: {total}</div>
       {mode === 'browse' ? (
         <Button style={{ marginBottom: 10 }} component={Link} to={'/checkout'} variant={'contained'}>Checkout</Button>
       ) : (
@@ -63,10 +63,13 @@ export function useCartState() {
     setCart([]);
   }
 
+  const total = cart.reduce((n, { price, quantity }) => n + price * quantity, 0);
+
   return {
     cart,
     addToCart,
     clearCart,
+    total,
   };
 }
 
