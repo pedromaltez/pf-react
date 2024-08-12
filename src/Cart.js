@@ -9,7 +9,7 @@ import {
 import { toast } from 'sonner';
 
 function Cart({ text = 'Browse the items in your cart and then click Checkout', mode = 'browse' }) {
-  const { cart, clearCart, total } = useContext(CartContext);
+  const { cart, clearCart, subtotal, total } = useContext(CartContext);
 
   const handleCheckout = () => {
     toast.success('Your order has been placed.');
@@ -30,7 +30,8 @@ function Cart({ text = 'Browse the items in your cart and then click Checkout', 
             )
         }
       </List>
-      <div>Total Price: {total}</div>
+      <div>Subtotal: £{subtotal}</div>
+      <div>Total (after discounts): £{total}</div>
       {mode === 'browse' ? (
         <Button style={{ marginBottom: 10 }} component={Link} to={'/checkout'} variant={'contained'}>Checkout</Button>
       ) : (
@@ -44,18 +45,18 @@ export function useCartState() {
   const [cart, setCart] = useState([]);
 
   function addToCart(newProduct) {
-    const productInBasket = cart.find(({id}) => id === newProduct.id);
+    const productInBasket = cart.find(({ id }) => id === newProduct.id);
     if (productInBasket) {
       const newCart = cart.map(product => {
         if (product.id === newProduct.id) {
-          return {...product, quantity: product.quantity + 1};
+          return { ...product, quantity: product.quantity + 1 };
         } else {
           return product;
         }
       })
       setCart([...newCart]);
     } else {
-      setCart([...cart, {...newProduct, quantity: 1}]);
+      setCart([...cart, { ...newProduct, quantity: 1 }]);
     }
   }
 
@@ -63,12 +64,17 @@ export function useCartState() {
     setCart([]);
   }
 
-  const total = cart.reduce((n, { price, quantity }) => n + price * quantity, 0);
+  const subtotal = cart.reduce((n, { price, quantity }) => n + price * quantity, 0).toFixed(2);
+  const total = cart.reduce(
+    (n, { price, quantity, discountPercentage }) =>
+      (n + price * (100 - discountPercentage) / 100 * quantity)
+    , 0).toFixed(2);
 
   return {
     cart,
     addToCart,
     clearCart,
+    subtotal,
     total,
   };
 }
